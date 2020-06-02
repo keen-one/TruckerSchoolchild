@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "517753369629",
+    "firebase_url": "https://truckdriver-fe6bb.firebaseio.com",
+    "project_id": "truckdriver",
+    "storage_bucket": "truckdriver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517753369629:android:99f03f44f0761d93f582f4",
+        "android_client_info": {
+          "package_name": "softnecessary.furgonok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517753369629-6grt0o60fal9pjcfim6r0det7kvq5gm9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "softnecessary.furgonok",
+            "certificate_hash": "2f1ed1c2562c74d5396a83174ae2dc6f24664206"
+          }
+        },
+        {
+          "client_id": "517753369629-1gqje237ntbu1gn5usl4qts0iapogahc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "softnecessary.furgonok",
+            "certificate_hash": "b306bff55ca0db409af29af34e5bbde429ad8812"
+          }
+        },
+        {
+          "client_id": "517753369629-p91b1b6bkdt1e05cni6fckm94an5opab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTAeOLzqz5Mx4kpkXXFXROWbBFvR4chAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517753369629-p91b1b6bkdt1e05cni6fckm94an5opab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

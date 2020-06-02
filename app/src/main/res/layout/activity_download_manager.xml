@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  tools:context=".DownloadManager">
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_school_bus">
+    <Button
+      android:id="@+id/btnSeleccionCarpeta"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/etCarpetaDescarga"
+      android:layout_marginHorizontal="@dimen/medium"
+      android:padding="@dimen/small"
+      android:background="@drawable/button_background"
+      android:drawableStart="@drawable/ic_folder_special"
+      android:focusable="true"
+      android:onClick="mostrarEleccionDirectorio"
+      android:text="@string/seleccionar_carpeta"
+      android:textColor="@color/blanco" />
+    <Button
+      android:id="@+id/btn_termino"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/medium"
+      android:layout_below="@id/btn_descarga"
+      android:layout_centerHorizontal="true"
+      android:padding="@dimen/small"
+      android:background="@drawable/button_background"
+      android:drawableTop="@drawable/ic_disc_full_white_24dp"
+      android:focusable="true"
+      android:onClick="cerrarPantalla"
+      android:text="@string/btn_terminar"
+      android:textColor="@color/blanco" />
+    <EditText
+      android:id="@+id/etCarpetaDescarga"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/toolbar"
+      android:layout_marginHorizontal="@dimen/medium"
+      android:layout_marginVertical="@dimen/small"
+      android:padding="@dimen/small"
+      android:background="@drawable/button_background_blanco"
+      android:focusable="false"
+      android:focusableInTouchMode="false"
+      android:hint="@string/carpeta_de_descarga"
+      android:importantForAutofill="no"
+      android:inputType="none"
+      android:textSize="@dimen/txt_size" />
+    <ProgressBar
+      android:id="@+id/barra_progreso"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/medium"
+      android:layout_marginBottom="@dimen/medium"
+      android:layout_marginStart="@dimen/medium"
+      android:layout_marginEnd="@dimen/medium"
+      android:layout_below="@id/btnSeleccionCarpeta"
+      android:progressTint="@color/colorPrimary" />
+    <TextView
+      android:id="@+id/tv_progreso"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/medium"
+      android:layout_below="@id/barra_progreso"
+      android:layout_centerHorizontal="true"
+      android:text="@string/progreso_descarga"
+      android:textAlignment="center" />
+    <ToggleButton
+      android:id="@+id/btn_descarga"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_marginTop="@dimen/medium"
+      android:layout_marginBottom="@dimen/medium"
+      android:layout_marginStart="@dimen/medium"
+      android:layout_marginEnd="@dimen/medium"
+      android:layout_below="@id/tv_progreso"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/toggle_btn_descarga"
+      android:checked="true"
+      android:onClick="btnDescargar"
+      android:textOff=""
+      android:textOn="" />
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:background="@color/colorPrimary"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark"
+      app:title="@string/app_name"
+      app:titleTextColor="#FFF" />
+  </RelativeLayout>
+</ScrollView>

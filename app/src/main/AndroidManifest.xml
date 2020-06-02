@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="softnecessary.furgonok"
+  android:targetSandboxVersion="1">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+  <application
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_descriptor"
+    android:hardwareAccelerated="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:name=".MiAplicacion"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    android:usesCleartextTraffic="true"
+    tools:ignore="GoogleAppIndexingWarning">
+    <provider
+      android:authorities="${applicationId}.provider"
+      android:exported="false"
+      android:grantUriPermissions="true"
+      android:name="androidx.core.content.FileProvider">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/provider_paths" />
+    </provider>
+
+    <service
+      android:exported="true"
+      android:name=".compras.InstanceIDService"
+      android:stopWithTask="false"
+      tools:ignore="ExportedService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <service
+      android:exported="true"
+      android:name=".compras.data.network.firebase.SubscriptionMessageService"
+      tools:ignore="ExportedService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <service
+      android:enabled="true"
+      android:exported="false"
+      android:name=".ServicioNotificacion" />
+    <service
+      android:enabled="true"
+      android:exported="false"
+      android:name=".ServiceRespaldoChat" />
+
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Elige un amigo"
+      android:launchMode="singleTask"
+      android:name=".ChooseFriend"
+      android:parentActivityName=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Nueva contraseña"
+      android:launchMode="singleTask"
+      android:name=".ChangePassword"
+      android:parentActivityName=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Administrador de descarga"
+      android:launchMode="singleTask"
+      android:name=".DownloadManager"
+      android:parentActivityName=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Inicio de sesión"
+      android:launchMode="singleTask"
+      android:name=".LoginPantalla"
+      android:parentActivityName=".PantallaInicial" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Nuevo amigo"
+      android:launchMode="singleTask"
+      android:name=".AdicionContacto"
+      android:parentActivityName=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="@string/conversacion"
+      android:launchMode="singleTask"
+      android:name=".ChatActivity"
+      android:parentActivityName=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Nuevo apoderado"
+      android:launchMode="singleTask"
+      android:name=".RegistroApoderado"
+      android:parentActivityName=".PantallaInicial" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Nuevo conductor escolar"
+      android:launchMode="singleTask"
+      android:name=".RegistroConductor"
+      android:parentActivityName=".PantallaInicial" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="@string/app_name"
+      android:launchMode="singleTask"
+      android:name=".PantallaInicial">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Menu principal"
+      android:launchMode="singleTop"
+      android:name=".MainActivity" />
+    <activity
+      android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+      android:label="Dirección en el mapa"
+      android:launchMode="singleTask"
+      android:name=".PickerDirection"
+      android:parentActivityName=".MainActivity" />
+
+    <meta-data
+      android:name="google_analytics_adid_collection_enabled"
+      android:value="true" />
+  </application>
+</manifest>

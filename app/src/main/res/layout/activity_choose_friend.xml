@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  tools:context=".ChooseFriend">
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/azulVerdoso">
+    <TextView
+      android:id="@+id/tv_amigos"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/toolbar"
+      android:padding="@dimen/medium"
+      android:background="@color/blanco"
+      android:text="@string/amigos" />
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:background="@color/colorPrimary"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark"
+      app:title="@string/app_name"
+      app:titleTextColor="#FFF" />
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/mi_rv_choose_friend"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/medium"
+      android:layout_below="@id/tv_amigos"
+      android:background="@color/azulVerdoso" />
+  </RelativeLayout>
+</ScrollView>

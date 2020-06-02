@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  tools:context=".ChatActivity">
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:background="@color/colorPrimary"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark"
+      app:title="@string/app_name"
+      app:titleTextColor="#FFF" />
+    <co.intentservice.chatui.ChatView
+      android:id="@+id/my_chat_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/toolbar"
+      android:padding="@dimen/medium"
+      app:bubbleBackgroundRcv="@color/azulClaro"
+      app:bubbleBackgroundSend="@color/amarillo"
+      app:bubbleElevation="elevated"
+      app:inputBackgroundColor="@color/blancoTrans"
+      app:inputHint="Escribe un mensaje aqui"
+      app:messageTextColorRcv="@color/negro"
+      app:messageTextColorSend="@color/negro"
+      app:sendBtnIcon="@drawable/ic_send_white_24dp" />
+  </RelativeLayout>
+</ScrollView>

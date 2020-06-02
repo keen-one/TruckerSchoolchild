@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:context=".PantallaInicial">
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/azulVerdoso">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:updatePremiumViews="@{subscriptionViewModel.subscriptions}">
+        <androidx.cardview.widget.CardView
+          android:id="@+id/premium_small_card"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:backgroundTint="@color/secondaryColor"
+          android:onClick="@{() -> billingViewModel.openPlayStoreSubscriptions()}"
+          app:cardCornerRadius="@dimen/small_card_corner_radius">
+          <TextView
+            android:id="@+id/premium_restore_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@color/secondaryTextColor" />
+          <TextView
+            android:id="@+id/premium_grace_period_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:text="@string/grace_period_message"
+            android:textColor="@color/secondaryTextColor" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+          android:id="@+id/premium_main_card"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/activity_vertical_margin"
+          android:layout_marginBottom="@dimen/activity_vertical_margin"
+          android:layout_marginStart="@dimen/activity_horizontal_margin"
+          android:layout_marginEnd="@dimen/activity_horizontal_margin"
+          app:cardCornerRadius="10dp">
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+              android:id="@+id/premium_transfer_message"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:layout_marginBottom="@dimen/activity_vertical_margin"
+              android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:layout_marginEnd="@dimen/activity_horizontal_margin"
+              android:orientation="vertical">
+              <Button
+                android:id="@+id/premium_transfer_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium"
+                android:padding="@dimen/small"
+                android:background="@drawable/button_background"
+                android:drawableStart="@drawable/ic_transfer_within_a_station"
+                android:onClick="@{() -> subscriptionViewModel.transferSubscriptions()}"
+                android:text="@string/transfer_button_text"
+                android:theme="@style/ButtonTheme" />
+              <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transfer_message" />
+            </LinearLayout>
+            <LinearLayout
+              android:id="@+id/premium_account_hold_message"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:layout_marginBottom="@dimen/activity_vertical_margin"
+              android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:layout_marginEnd="@dimen/activity_horizontal_margin"
+              android:orientation="vertical">
+              <Button
+                android:id="@+id/premium_account_hold_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium"
+                android:padding="@dimen/small"
+                android:background="@drawable/button_background"
+                android:drawableStart="@drawable/ic_payment"
+                android:onClick="@{() -> billingViewModel.openAccountHoldSubscription()}"
+                android:text="@string/fix_button_text"
+                android:theme="@style/ButtonTheme" />
+              <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/todo"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/fondo_con_bus_escolar" />
+              <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/account_hold_message" />
+            </LinearLayout>
+            <LinearLayout
+              android:id="@+id/premium_premium_content"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              app:updatePremiumContent="@{subscriptionViewModel.premiumContent}">
+              <ImageView
+                android:id="@+id/premium_premium_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+              <TextView
+                android:id="@+id/premium_premium_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/medium"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="@string/premium_message" />
+            </LinearLayout>
+            <LinearLayout
+              android:id="@+id/premium_paywall_message"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:layout_marginBottom="@dimen/activity_vertical_margin"
+              android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:layout_marginEnd="@dimen/activity_horizontal_margin"
+              android:orientation="vertical">
+              <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium"
+                android:padding="@dimen/small"
+                android:background="@drawable/button_background"
+                android:drawableStart="@drawable/ic_card_membership_white_24dp"
+                android:onClick="@{() -> billingViewModel.buyPremium()}"
+                android:text="@string/premium_button_text"
+                android:theme="@style/ButtonTheme" />
+              <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/premium_paywall_message" />
+            </LinearLayout>
+            <LinearLayout
+              android:id="@+id/premium_upgrade_message"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/activity_vertical_margin"
+              android:layout_marginBottom="@dimen/activity_vertical_margin"
+              android:layout_marginStart="@dimen/activity_horizontal_margin"
+              android:layout_marginEnd="@dimen/activity_horizontal_margin"
+              android:orientation="vertical"
+              android:visibility="gone">
+              <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small"
+                android:onClick="@{() -> billingViewModel.buyUpgrade()}"
+                android:text="@string/upgrade_button_text"
+                android:theme="@style/ButtonTheme" />
+              <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/premium_upgrade_message" />
+            </LinearLayout>
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+      </LinearLayout>
+      <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:loadingProgressBar="@{subscriptionViewModel.loading}" />
+    </FrameLayout>
+  </ScrollView>
+  <data>
+    <variable
+      name="billingViewModel"
+      type="softnecessary.furgonok.compras.ui.BillingViewModel" />
+    <variable
+      name="subscriptionViewModel"
+      type="softnecessary.furgonok.compras.ui.SubscriptionStatusViewModel" />
+  </data>
+</layout>

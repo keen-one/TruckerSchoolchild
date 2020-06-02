@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  tools:context=".MainActivity">
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/azulVerdoso"
+    android:orientation="vertical">
+    <ImageView
+      android:id="@+id/img_furgon_arcoiris"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentBottom="true"
+      android:layout_below="@id/layout_botonera"
+      android:contentDescription="@string/todo"
+      android:scaleType="fitCenter"
+      app:srcCompat="@drawable/bus_escolar_arcoiris" />
+    <LinearLayout
+      android:id="@+id/layout_botonera"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/medium"
+      android:layout_below="@id/my_cv"
+      android:padding="@dimen/medium"
+      android:background="@drawable/button_background_blanco"
+      android:orientation="vertical">
+      <TextView
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:text="Opciones de cuenta:"
+        android:textColor="@color/negro" />
+      <Button
+        android:id="@+id/btn_cambio_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_system_update_alt"
+        android:focusable="true"
+        android:text="@string/cambiar_contrase_a"
+        android:textColor="@color/blanco" />
+      <Button
+        android:id="@+id/btn_cambio_punto_partida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_system_update_alt"
+        android:focusable="true"
+        android:text="@string/modificar_punto_de_partida"
+        android:textColor="@color/blanco" />
+      <Button
+        android:id="@+id/btn_eliminacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_remove_circle_outline"
+        android:focusable="true"
+        android:text="@string/eliminar_perfil"
+        android:textColor="@color/blanco" />
+      <TextView
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/medium"
+        android:text="Opciones de mensajería:"
+        android:textColor="@color/negro" />
+      <Button
+        android:id="@+id/btn_inicar_cuenta_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_play_for_work"
+        android:focusable="true"
+        android:text="@string/iniciar_cuenta_de_mensajer_a"
+        android:textColor="@color/blanco" />
+      <Button
+        android:id="@+id/btn_registro_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_fiber_new"
+        android:focusable="true"
+        android:text="@string/registrar_como_cliente_de_mensajeria"
+        android:textColor="@color/blanco" />
+      <Button
+        android:id="@+id/btn_eliminar_cuenta_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        android:padding="@dimen/small"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/ic_remove_circle_outline"
+        android:focusable="true"
+        android:text="@string/eliminar_cuenta_de_mensajeria"
+        android:textColor="@color/blanco"
+        android:visibility="gone" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+      android:id="@+id/my_cv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/small"
+      android:layout_marginHorizontal="@dimen/medium"
+      android:longClickable="true"
+      app:cardBackgroundColor="@color/miPurpura"
+      app:cardCornerRadius="10dp"
+      app:cardElevation="@dimen/cv_elevation">
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium">
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_toEndOf="@id/cv_img_profile"
+          android:padding="@dimen/medium"
+          android:orientation="vertical">
+          <TextView
+            android:id="@+id/tv_nombreUsuario"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_de_usuario_desconocido"
+            android:textColor="@color/blanco" />
+          <TextView
+            android:id="@+id/tv_puntoPartida"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punto_partida_desconocido"
+            android:textColor="@color/blanco" />
+          <TextView
+            android:id="@+id/tv_destino"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/destino_desconocido"
+            android:textColor="@color/blanco" />
+          <TextView
+            android:id="@+id/tv_lugar"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lugar_desconocido"
+            android:textColor="@color/blanco" />
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+          android:id="@+id/cv_img_profile"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="@dimen/medium"
+          android:layout_centerVertical="true"
+          android:elevation="12dp"
+          android:innerRadius="0dp"
+          android:shape="ring"
+          android:thicknessRatio="1.9"
+          app:cardCornerRadius="30dp">
+          <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:contentDescription="@string/todo" />
+        </androidx.cardview.widget.CardView>
+      </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+  </RelativeLayout>
+</ScrollView>

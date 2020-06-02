@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/launch_admin_descarga"
+    android:title="@string/descarga_el_mapa_de_chile" />
+  <item
+    android:id="@+id/launch_loggout"
+    android:title="@string/salir" />
+</menu>

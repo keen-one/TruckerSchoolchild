@@ -1,0 +1,180 @@
+apply plugin: 'com.android.application'
+
+//apply plugin: "com.google.gms.google-services"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
+    defaultConfig {
+        applicationId "softnecessary.furgonok"
+        minSdkVersion 27
+        targetSdkVersion 29
+        versionCode 12
+        versionName "20.6.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/INDEX.LIST'
+        exclude '**.hpp'
+        exclude '**.md'
+        exclude '**.h'
+        exclude '**/licenses/**'
+        exclude '**.cmake'
+        exclude '**.supp'
+        exclude '**.mk'
+        exclude '**.pc'
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    /*dataBinding {
+        enabled = true
+    }*/
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //firebase y google service
+    //implementation 'com.google.firebase:firebase-core:16.0.4'
+    //implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+    /*implementation 'com.google.firebase:firebase-auth:12.0.1'
+    implementation 'com.google.firebase:firebase-core:12.0.1'
+    implementation 'com.google.firebase:firebase-functions:12.0.1'
+    implementation 'com.google.firebase:firebase-messaging:12.0.1'*/
+    //google play service
+    //implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    //implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.4'
+    implementation 'com.google.firebase:firebase-functions:19.0.2'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'junit:junit:4.13'
+    //android support
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.leanback:leanback-preference:1.0.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation "androidx.drawerlayout:drawerlayout:1.0.0"
+    implementation 'androidx.preference:preference:1.1.1'
+    //validacion de campos
+    implementation 'com.basgeekball:awesome-validation:4.2'
+
+    //chat ui
+    implementation 'com.github.timigod:android-chat-ui:v0.1.4'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //descargar de la web
+    implementation 'com.koushikdutta.ion:ion:3.0.9'
+    //para leer texto de una imagen
+    implementation 'com.rmtheis:tess-two:9.0.0'
+    //consumir servidor
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //javacv
+    //implementation 'org.bytedeco:javacv:1.5.3'
+    implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4'
+    implementation 'org.bytedeco.javacpp-presets:openblas:0.3.5-1.4.4:android-arm'
+    implementation 'org.bytedeco.javacpp-presets:openblas:0.3.5-1.4.4:android-arm64'
+    implementation 'org.bytedeco.javacpp-presets:openblas:0.3.5-1.4.4:android-x86'
+    implementation 'org.bytedeco.javacpp-presets:openblas:0.3.5-1.4.4:android-x86_64'
+    implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:android-arm'
+    implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:android-arm64'
+    implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:android-x86'
+    implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:android-x86_64'
+    //implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:windows-x86'
+    //implementation 'org.bytedeco.javacpp-presets:ffmpeg:4.1-1.4.4:windows-x86_64'
+    implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:android-arm'
+    implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:android-arm64'
+    implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:android-x86'
+    implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:android-x86_64'
+    //implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:windows-x86'
+    //implementation 'org.bytedeco.javacpp-presets:opencv:4.0.1-1.4.4:windows-x86_64'
+    //chat con protocolo xmpp
+    implementation 'org.igniterealtime.smack:smack-android:4.4.0-alpha2'
+    implementation 'org.igniterealtime.smack:smack-im:4.4.0-alpha2'
+    implementation 'org.igniterealtime.smack:smack-tcp:4.4.0-alpha2'
+    implementation 'org.igniterealtime.smack:smack-openpgp:4.4.0-alpha2'
+    implementation 'org.igniterealtime.smack:smack-extensions:4.4.0-alpha2'
+    implementation 'org.igniterealtime.smack:smack-core:4.4.0-alpha2'
+    //leer codigo fuente en nodos
+    //implementation 'org.jsoup:jsoup:1.13.1'
+
+
+    //librerira para usar email de google
+    /*implementation('com.github.ProKashif:KASocialLogins:1.2.0') {
+        exclude group: "com.facebook.android", module: "facebook-android-sdk"
+    }*/
+    //elegir carpeta
+    implementation 'lib.kashif:folderpicker:2.4'
+
+    //osmdroid+mapforge
+    implementation 'org.osmdroid:osmdroid-mapsforge:6.1.0@aar'
+    implementation 'org.mapsforge:mapsforge-map-android:0.12.0'
+    implementation 'org.mapsforge:mapsforge-map:0.12.0'
+    implementation 'org.mapsforge:mapsforge-themes:0.12.0'
+    //ruta y direccion
+    implementation('com.github.MKergall:osmbonuspack:6.6.0') {
+        exclude group: "org.osmdroid"
+    }
+    implementation 'org.osmdroid:osmdroid-android:6.1.0@aar'
+
+    //billing de google
+    implementation 'com.android.billingclient:billing:2.2.0'
+
+
+    // ViewModel and LiveData extensions.
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+    // Glide image library.
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    // Room Architecture Components.
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+
+}
+//apply plugin: "com.google.gms.google-services"
+configurations {
+    all*.exclude group: 'xpp3', module: 'xpp3'
+    all*.exclude group: 'xpp3', module: 'xpp3_min'
+    all*.exclude group: 'net.sf.kxml', module: 'kxml2'
+    all*.exclude group: 'org.xmlpull.v1', module: 'xpp3_min'
+}
+//apply plugin: 'com.google.gms.google-services:17.0.0'
+//GoogleServicesPlugin.config.disableVersionCheck = true
+
+apply plugin: 'com.google.gms.google-services'

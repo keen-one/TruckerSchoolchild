@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/azulVerdoso"
+  android:orientation="vertical">
+  <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/medium"
+    app:cardBackgroundColor="@color/miPurpura"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="@dimen/cv_elevation">
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/medium"
+      android:orientation="horizontal">
+      <Button
+        android:id="@+id/btn_eliminar"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_background_yellow"
+        android:text="@string/x"
+        android:textColor="@color/negro" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/cv_img_profile"
+        android:layout_toStartOf="@id/btn_eliminar"
+        android:orientation="vertical">
+        <TextView
+          android:id="@+id/tv_apodo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="@dimen/medium"
+          android:text="@string/apodo"
+          android:textColor="@color/blanco" />
+        <TextView
+          android:id="@+id/tv_nombreUsuario"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="@dimen/medium"
+          android:text="@string/nombre_de_usuario"
+          android:textColor="@color/blanco" />
+      </LinearLayout>
+      <androidx.cardview.widget.CardView
+        android:id="@+id/cv_img_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/medium"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        app:cardCornerRadius="25dp" />
+    </RelativeLayout>
+  </androidx.cardview.widget.CardView>
+</RelativeLayout>
